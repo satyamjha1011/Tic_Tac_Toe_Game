@@ -4,12 +4,12 @@
 
 <h3><b>Table of Contents</b></h3>
 <ol>
-Project Overview
-Features
-Technologies Used
-Installation
-How to Play
-Game Rules
+<li>Project Overview
+<li>Features
+<li>Technologies Used
+<li>Installation
+<li>How to Play
+<li>Game Rules
 </ol><br><br>
 
 <b>Project Overview</b>
@@ -24,9 +24,9 @@ Reset Game: A button to restart the game at any time.
 <br><br>
 
 <b>Technologies Used</b>
-<b>HTML5:</b> For structuring the game.
-<b>CSS3:</b> For styling the game, with a gradient background and hover effects.
-<b>JavaScript:</b> For implementing the game logic, including player turns, win checking, and game reset functionality.
+<b>HTML5:</b> For structuring the game.<br>
+<b>CSS3:</b> For styling the game, with a gradient background and hover effects.<br>
+<b>JavaScript:</b> For implementing the game logic, including player turns, win checking, and game reset functionality.<br>
 <br><br>
 <b>Installation</b>
 To run the Tic-Tac-Toe game on your local machine, follow these steps:
