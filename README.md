@@ -49,6 +49,7 @@ Open index.html in your browser: You can simply double-click the index.html file
 <br><br>
 
 <b>How to Play</b><br>
+
 <b>Start the Game:</b> The game begins with Player X.<br>
 <b>Take Turns:</b> Click any empty cell to place your mark (either X or O) in the grid.<br>
 <b>Winning the Game:</b> The first player to get three of their marks in a row (horizontally, vertically, or diagonally) wins.<br>
@@ -58,6 +59,7 @@ Open index.html in your browser: You can simply double-click the index.html file
 <br><br>
 
 <b>Game Rules</b><br>
+
 The game is played on a 3x3 grid.<br>
 Player X always goes first, followed by Player O.<br>
 A player wins by placing three of their marks in a row, either horizontally, vertically, or diagonally.<br>
