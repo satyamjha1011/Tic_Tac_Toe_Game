@@ -9,6 +9,14 @@
 <body>
     <div class="container">
         <h1>Tic-Tac-Toe</h1>
+        
+        <!-- Player Names Section -->
+        <div class="player-names">
+            <input type="text" id="player-x-name" placeholder="Enter Player X's Name" /><br>
+            <input type="text" id="player-o-name" placeholder="Enter Player O's Name" /><br>
+            <button id="start-game-btn">Start Game</button>
+        </div>
+        
         <div class="game-board">
             <div class="row">
                 <button class="cell" id="cell-0"></button>
@@ -26,11 +34,18 @@
                 <button class="cell" id="cell-8"></button>
             </div>
         </div>
+        
         <div class="status">
-            <p id="status-text">Player X's Turn</p>
+            <p id="status-text">Enter player names and start the game</p>
             <button id="reset-btn">Reset Game</button>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+

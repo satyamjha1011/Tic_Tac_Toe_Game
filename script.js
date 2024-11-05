@@ -1,11 +1,16 @@
 let currentPlayer = 'X'; // Player X starts
 let board = ['', '', '', '', '', '', '', '', '']; // Board array to keep track of moves
-let gameActive = true; // Flag to track if the game is still ongoing
+let gameActive = false; // Flag to track if the game is still ongoing
+let playerXName = '';
+let playerOName = '';
 
-// Get all cells (buttons)
+// Get elements
 const cells = document.querySelectorAll('.cell');
 const statusText = document.getElementById('status-text');
 const resetButton = document.getElementById('reset-btn');
+const startGameButton = document.getElementById('start-game-btn');
+const playerXInput = document.getElementById('player-x-name');
+const playerOInput = document.getElementById('player-o-name');
 
 // Check for win condition
 const checkWin = () => {
@@ -20,7 +25,7 @@ const checkWin = () => {
         const [a, b, c] = pattern;
         if (board[a] && board[a] === board[b] && board[a] === board[c]) {
             gameActive = false; // Game over
-            statusText.textContent = `Player ${currentPlayer} Wins!`;
+            statusText.textContent = `${currentPlayer === 'X' ? playerXName : playerOName} Wins!`;
             return;
         }
     }
@@ -42,7 +47,7 @@ const handleCellClick = (index) => {
         if (gameActive) {
             // Switch player turn
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-            statusText.textContent = `Player ${currentPlayer}'s Turn`;
+            statusText.textContent = `${currentPlayer === 'X' ? playerXName : playerOName}'s Turn`;
         }
     }
 };
@@ -58,5 +63,29 @@ resetButton.addEventListener('click', () => {
     gameActive = true;
     currentPlayer = 'X'; // Start with Player X
     cells.forEach(cell => cell.textContent = ''); // Clear all cells
-    statusText.textContent = `Player ${currentPlayer}'s Turn`;
+    statusText.textContent = `${playerXName}'s Turn`; // Reset turn to Player X
 });
+
+// Start game with player names
+startGameButton.addEventListener('click', () => {
+    playerXName = playerXInput.value.trim();
+    playerOName = playerOInput.value.trim();
+
+    // Validate player names
+    if (playerXName === '' || playerOName === '') {
+        alert('Please enter both player names!');
+        return;
+    }
+
+    // Hide name input fields and show the game board
+    document.querySelector('.player-names').style.display = 'none';
+    document.querySelector('.game-board').style.display = 'block';
+    document.querySelector('.status').style.display = 'block';
+
+    // Set the initial status
+    statusText.textContent = `${playerXName}'s Turn`;
+    gameActive = true;
+});
+
+
+
