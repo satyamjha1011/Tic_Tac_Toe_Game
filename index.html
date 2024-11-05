@@ -9,15 +9,8 @@
 <body>
     <div class="container">
         <h1>Tic-Tac-Toe</h1>
-        
-        <!-- Player Names Section -->
-        <div class="player-names">
-            <input type="text" id="player-x-name" placeholder="Enter Player X's Name" /><br>
-            <input type="text" id="player-o-name" placeholder="Enter Player O's Name" /><br>
-            <button id="start-game-btn">Start Game</button>
-        </div>
-        
-        <div class="game-board">
+        <!-- Game Board -->
+        <div class="game-board" style="display: none;">
             <div class="row">
                 <button class="cell" id="cell-0"></button>
                 <button class="cell" id="cell-1"></button>
@@ -34,18 +27,31 @@
                 <button class="cell" id="cell-8"></button>
             </div>
         </div>
-        
         <div class="status">
             <p id="status-text">Enter player names and start the game</p>
-            <button id="reset-btn">Reset Game</button>
+            <button id="reset-btn" style="display: none;">Reset Game</button>
+            <button id="game-end-btn" style="display: none;">End Game</button>
         </div>
+        <br>
+        <p>@Design By :- Satyam Jha</p>
     </div>
+    
+    
+        <!-- Player Names Section -->
+        <div class="player-names">
+            <input type="text" id="player-x-name" placeholder="Enter Player X's Name" />
+            <input type="text" id="player-o-name" placeholder="Enter Player O's Name" />
+            <button id="start-game-btn">Start Game</button>
+        </div>
 
+            <!-- Scoreboard Section -->
+        <div class="scoreboard" style="display: none;">
+            <h2>Scoreboard</h2>
+            <p id="player-x-score">Player X: 0</p>
+            <p id="player-o-score">Player O: 0</p>
+        </div>
+    
     <script src="script.js"></script>
+    
 </body>
 </html>
-
-
-
-
-

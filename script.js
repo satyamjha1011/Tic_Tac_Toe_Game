@@ -3,6 +3,8 @@ let board = ['', '', '', '', '', '', '', '', '']; // Board array to keep track o
 let gameActive = false; // Flag to track if the game is still ongoing
 let playerXName = '';
 let playerOName = '';
+let playerXScore = 0;
+let playerOScore = 0;
 
 // Get elements
 const cells = document.querySelectorAll('.cell');
@@ -11,6 +13,10 @@ const resetButton = document.getElementById('reset-btn');
 const startGameButton = document.getElementById('start-game-btn');
 const playerXInput = document.getElementById('player-x-name');
 const playerOInput = document.getElementById('player-o-name');
+const scoreboard = document.querySelector('.scoreboard');
+const gameEndButton = document.getElementById('game-end-btn');
+const playerXScoreText = document.getElementById('player-x-score');
+const playerOScoreText = document.getElementById('player-o-score');
 
 // Check for win condition
 const checkWin = () => {
@@ -25,7 +31,16 @@ const checkWin = () => {
         const [a, b, c] = pattern;
         if (board[a] && board[a] === board[b] && board[a] === board[c]) {
             gameActive = false; // Game over
-            statusText.textContent = `${currentPlayer === 'X' ? playerXName : playerOName} Wins!`;
+            if (currentPlayer === 'X') {
+                playerXScore++; // Player X wins
+                playerXScoreText.textContent = `${playerXName}: ${playerXScore}`;
+                statusText.textContent = `${playerXName} Wins!`;
+            } else {
+                playerOScore++; // Player O wins
+                playerOScoreText.textContent = `${playerOName}: ${playerOScore}`;
+                statusText.textContent = `${playerOName} Wins!`;
+            }
+            gameEndButton.style.display = 'inline-block'; // Show Game End button
             return;
         }
     }
@@ -34,6 +49,7 @@ const checkWin = () => {
     if (!board.includes('')) {
         gameActive = false; // Game over
         statusText.textContent = 'It\'s a Draw!';
+        gameEndButton.style.display = 'inline-block'; // Show Game End button
     }
 };
 
@@ -64,6 +80,7 @@ resetButton.addEventListener('click', () => {
     currentPlayer = 'X'; // Start with Player X
     cells.forEach(cell => cell.textContent = ''); // Clear all cells
     statusText.textContent = `${playerXName}'s Turn`; // Reset turn to Player X
+    gameEndButton.style.display = 'none'; // Hide the Game End button
 });
 
 // Start game with player names
@@ -77,15 +94,37 @@ startGameButton.addEventListener('click', () => {
         return;
     }
 
-    // Hide name input fields and show the game board
+    // Hide name input fields and show the game board and scoreboard
     document.querySelector('.player-names').style.display = 'none';
+    scoreboard.style.display = 'block';
     document.querySelector('.game-board').style.display = 'block';
     document.querySelector('.status').style.display = 'block';
 
     // Set the initial status
     statusText.textContent = `${playerXName}'s Turn`;
     gameActive = true;
+
+    // Show both Reset and End Game buttons
+    resetButton.style.display = 'inline-block';
+    gameEndButton.style.display = 'inline-block';
 });
 
-
-
+// End the game and return to the start screen
+gameEndButton.addEventListener('click', () => {
+    // Reset game and show player name input section again
+    document.querySelector('.player-names').style.display = 'block';
+    scoreboard.style.display = 'none';
+    document.querySelector('.game-board').style.display = 'none';
+    document.querySelector('.status').style.display = 'none';
+    resetButton.style.display = 'none';
+    gameEndButton.style.display = 'none';
+    
+    // Clear previous names and scores
+    playerXName = '';
+    playerOName = '';
+    playerXScore = 0;
+    playerOScore = 0;
+    playerXScoreText.textContent = `Player X: 0`;
+    playerOScoreText.textContent = `Player O: 0`;
+    statusText.textContent = 'Enter player names and start the game';
+});
