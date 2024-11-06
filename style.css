@@ -246,3 +246,71 @@ h2 {
 #player-o-score.highlight {
     color: #1E90FF; /* DodgerBlue */
 }
+
+
+/* General Responsive Container */
+.container {
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Adjust Game Board Cells for smaller screens */
+@media screen and (max-width: 768px) {
+    .cell {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .row {
+        margin-bottom: 8px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .status, .scoreboard {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .cell {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .row {
+        margin-bottom: 6px;
+    }
+
+    #start-game-btn, #reset-btn, #game-end-btn {
+        width: 100%;
+    }
+}
+
+/* For very small screens (e.g., mobile in portrait mode) */
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .cell {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .player-names input, #start-game-btn {
+        width: 90%;
+    }
+
+    .scoreboard {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
