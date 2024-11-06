@@ -1,5 +1,8 @@
 <h1>Tic-Tac-Toe Game</h1><br><br>
 
+<b>Play game Online:- https://satyamjha1011.github.io/Tic_Tac_Toe_Game/</b><br><br>
+
+
 <p>A simple and interactive Tic-Tac-Toe game built with HTML, CSS, and JavaScript. Players take turns to mark X or O on a 3x3 grid, and the game announces the winner or a draw when the game ends.</p><br><br>
 
 <h3><b>Table of Contents</b></h3>
@@ -40,7 +43,7 @@ To run the Tic-Tac-Toe game on your local machine, follow these steps:<br>
 bash
 git clone https://github.com/satyamjha1011/tic-tac-toe-game.git<br>
 
-<b>2. Navigate to the project folder:<b><br>
+<b>2. Navigate to the project folder:</b><br>
 
 bash
 cd tic-tac-toe-game<br>
@@ -49,7 +52,7 @@ Open index.html in your browser: You can simply double-click the index.html file
 <br><br>
 
 <b>How to Play</b><br>
-
+<b>Play game Online:- https://satyamjha1011.github.io/Tic_Tac_Toe_Game/</b><br>
 <b>Enter Both player Name and click Start Button</b><br>
 <b>Start the Game:</b> The game begins with Player X.<br>
 <b>Take Turns:</b> Click any empty cell to place your mark (either X or O) in the grid.<br>

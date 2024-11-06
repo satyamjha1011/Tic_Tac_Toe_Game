@@ -222,3 +222,27 @@ h2 {
         font-size: 16px;
     }
 }
+/* Add to your existing CSS */
+
+/* Highlight winning player name in the status text */
+.highlight-winner {
+    color: #FFD700; /* Gold for highlighted winner */
+    font-weight: bold;
+}
+
+/* Highlight winning player's score in the scoreboard */
+.scoreboard .highlight {
+    background-color: #FFD700; /* Gold background */
+    border-radius: 8px;
+    padding: 8px;
+    font-weight: bold;
+    color: #FF6347; /* Tomato color for contrast */
+}
+
+#player-x-score.highlight {
+    color: #FF6347; /* Tomato */
+}
+
+#player-o-score.highlight {
+    color: #1E90FF; /* DodgerBlue */
+}

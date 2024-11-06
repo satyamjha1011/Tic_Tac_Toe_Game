@@ -34,11 +34,13 @@ const checkWin = () => {
             if (currentPlayer === 'X') {
                 playerXScore++; // Player X wins
                 playerXScoreText.textContent = `${playerXName}: ${playerXScore}`;
-                statusText.textContent = `${playerXName} Wins!`;
+                playerXScoreText.classList.add('highlight');
+                statusText.innerHTML = `<span class="highlight-winner">${playerXName}</span> Wins!`;
             } else {
                 playerOScore++; // Player O wins
                 playerOScoreText.textContent = `${playerOName}: ${playerOScore}`;
-                statusText.textContent = `${playerOName} Wins!`;
+                playerOScoreText.classList.add('highlight');
+                statusText.innerHTML = `<span class="highlight-winner">${playerOName}</span> Wins!`;
             }
             gameEndButton.style.display = 'inline-block'; // Show Game End button
             return;
@@ -81,6 +83,11 @@ resetButton.addEventListener('click', () => {
     cells.forEach(cell => cell.textContent = ''); // Clear all cells
     statusText.textContent = `${playerXName}'s Turn`; // Reset turn to Player X
     gameEndButton.style.display = 'none'; // Hide the Game End button
+
+    // Remove highlights from previous winner's name and score
+    playerXScoreText.classList.remove('highlight');
+    playerOScoreText.classList.remove('highlight');
+    statusText.classList.remove('highlight-winner');
 });
 
 // Start game with player names
